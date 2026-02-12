@@ -1,6 +1,73 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>ploxy</title>
+
+<style>
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 共通 */
+input, button {
+  border-radius: 20px;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+}
+
+button {
+  background: #1f1f1f;
+  color: white;
+  cursor: pointer;
+}
+
+/* ログイン画面 */
+#login {
+  text-align: center;
+}
+
+#login input {
+  width: 250px;
+  margin: 6px;
+  background: #222;
+  color: white;
+}
+
+/* 検索画面 */
+#main {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+#searchbar {
+  width: 60%;
+  max-width: 600px;
+  background: #222;
+  color: white;
+}
+</style>
+</head>
+
 <body>
-<h1>表示テスト OK</h1>
-</body>
-</html>
+
+<!-- ログイン -->
+<div id="login">
+  <h2>Login</h2>
+  <input id="user" placeholder="Username"><br>
+  <input id="pass" type="password" placeholder="Password"><br>
+  <button onclick="login()">Enter</button>
+</div>
+
+<!-- メイン -->
+<div id="main">
+  <input id="searchbar" placeholder="検索 or URL">
