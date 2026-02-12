@@ -6,68 +6,65 @@
 
 <style>
 body {
-  margin: 0;
-  background: #0f0f0f;
-  color: white;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin:0;
+  background:#0f0f0f;
+  color:white;
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
-/* 共通 */
-input, button {
-  border-radius: 20px;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
+input,button{
+  border:none;
+  border-radius:20px;
+  padding:12px;
+  margin:6px;
+  background:#222;
+  color:white;
 }
 
-button {
-  background: #1f1f1f;
-  color: white;
-  cursor: pointer;
+button{
+  cursor:pointer;
 }
 
-/* ログイン画面 */
-#login {
-  text-align: center;
+#main{
+  display:none;
 }
 
-#login input {
-  width: 250px;
-  margin: 6px;
-  background: #222;
-  color: white;
-}
-
-/* 検索画面 */
-#main {
-  display: none;
-  width: 100%;
-  text-align: center;
-}
-
-#searchbar {
-  width: 60%;
-  max-width: 600px;
-  background: #222;
-  color: white;
+#searchbar{
+  width:500px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ログイン -->
 <div id="login">
-  <h2>Login</h2>
-  <input id="user" placeholder="Username"><br>
-  <input id="pass" type="password" placeholder="Password"><br>
-  <button onclick="login()">Enter</button>
+<h2>Login</h2>
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+<button onclick="login()">Enter</button>
 </div>
 
-<!-- メイン -->
 <div id="main">
-  <input id="searchbar" placeholder="検索 or URL">
+<input id="searchbar" placeholder="検索 or URL">
+</div>
+
+<script>
+function login(){
+  const u=document.getElementById("user").value;
+  const p=document.getElementById("pass").value;
+
+  if(u==="admin" && p==="1234"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("main").style.display="block";
+  }else{
+    alert("ユーザー名かパスワードが違います");
+  }
+}
+</script>
+
+</body>
+</html>
